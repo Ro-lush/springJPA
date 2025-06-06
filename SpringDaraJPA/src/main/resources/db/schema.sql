@@ -2,7 +2,7 @@
 CREATE TABLE public.menu (
     id integer NOT NULL,
     name character varying(100) NOT NULL,
-    price numeric(10,2) NOT NULL
+    price float4 NOT NULL
 );
 
 
@@ -56,7 +56,7 @@ CREATE TABLE public.orders (
     customer_name character varying(255) NOT NULL,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     status character varying(50) NOT NULL,
-    order_amount numeric(10,2) NOT NULL
+    order_amount float4 NOT NULL
 );
 
 
