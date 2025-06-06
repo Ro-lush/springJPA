@@ -1,12 +1,15 @@
 package ru.academy.pizza.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.academy.pizza.model.Order;
 import ru.academy.pizza.repository.OrderRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Service
 public class OrderService {
+    @Autowired
     private final OrderRepository orderRepository;
 
     public OrderService(OrderRepository orderRepository) {
