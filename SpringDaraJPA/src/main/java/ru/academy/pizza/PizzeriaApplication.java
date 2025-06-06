@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import ru.academy.pizza.config.ConfigPizza;
 import ru.academy.pizza.customerService.CustomerService;
 import ru.academy.pizza.model.MargaritaPizza;
+import ru.academy.pizza.model.Menu;
 import ru.academy.pizza.model.Order;
 import ru.academy.pizza.model.Pizza;
 
@@ -29,19 +30,4 @@ public class PizzeriaApplication {
         SpringApplication.run(PizzeriaApplication.class, args);
     }
 
-
- /*   @Override
-    public void run(String... args) {
-
-        Order order1 = new Order(
-                List.of(
-                        new MargaritaPizza(Pizza.Size.MEDIUM, configPizza),
-                        new MargaritaPizza(Pizza.Size.LARGE, configPizza)
-                ),
-                "Иван Иванов"
-        );
-
-        customerService.placeOrder(order1);
-
-    }*/
 }
