@@ -32,5 +32,7 @@ public class Test {
         for (Menu m:menuList) {
             System.out.println(m.getName()+" "+m.getPrice());
         }
+
+
     }
 }
