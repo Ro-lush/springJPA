@@ -2,13 +2,25 @@
 CREATE TABLE public.menu (
     id integer NOT NULL,
     name character varying(100) NOT NULL,
-    price numeric(10,2) NOT NULL
+    price float4 NOT NULL
 );
 
 
 
 ALTER TABLE public.menu OWNER TO postgres;
 
+CREATE SEQUENCE public.menu_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.menu_id_seq OWNER TO postgres;
+
+ALTER SEQUENCE public.menu_id_seq OWNED BY public.menu.id;
 
 CREATE TABLE public.order_items (
     id integer NOT NULL,
@@ -44,7 +56,7 @@ CREATE TABLE public.orders (
     customer_name character varying(255) NOT NULL,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     status character varying(50) NOT NULL,
-    order_amount numeric(10,2) NOT NULL
+    order_amount float4 NOT NULL
 );
 
 
@@ -68,6 +80,7 @@ ALTER SEQUENCE public.orders_id_seq OWNER TO postgres;
 
 ALTER SEQUENCE public.orders_id_seq OWNED BY public.orders.id;
 
+ALTER TABLE ONLY public.menu ALTER COLUMN id SET DEFAULT nextval('public.menu_id_seq'::regclass);
 
 
 ALTER TABLE ONLY public.order_items ALTER COLUMN id SET DEFAULT nextval('public.order_items_id_seq'::regclass);

@@ -12,22 +12,22 @@ import ru.academy.pizza.model.MargaritaPizza;
 import ru.academy.pizza.model.Menu;
 import ru.academy.pizza.model.Order;
 import ru.academy.pizza.model.Pizza;
+import ru.academy.pizza.repository.MenuRepository;
+import ru.academy.pizza.repository.OrderRepository;
+import ru.academy.pizza.service.OrderService;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 
 
 public class PizzeriaApplication {
 
-    @Autowired
-    private CustomerService customerService;
-
-    @Autowired
-    private ConfigPizza configPizza;
-
     public static void main(String[] args) {
         SpringApplication.run(PizzeriaApplication.class, args);
+
     }
+
 
 }
